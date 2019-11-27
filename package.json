@@ -1,9 +1,9 @@
 {
-  "name": "vuereact",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@devilwjp/vuereact",
+  "private": false,
+  "version": "0.0.0-beta0.1",
   "description": "Vue和React快捷集成的工具包，并且适合复杂的集成场景",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/devilwjp/VueReact/issues"
   },
+  "files": [
+    "dist"
+  ],
   "homepage": "https://github.com/devilwjp/VueReact#readme"
 }
