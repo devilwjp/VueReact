@@ -24,7 +24,7 @@ PS：这个工具包也是作为参加集团编程大赛的一个作品
   
 ## useVueInReact  
 在react组件中使用vue的组件
-````   
+````jsx harmony   
 import React from 'react'
 import VueComponent from '../views/test2.vue' // vue组件
 import { useVueInReact } from 'vuereact-combined'
@@ -46,7 +46,7 @@ export default demo1
 ````  
 
 在react组件中，向vue组件传递具名插槽和作用域插槽，以及绑定自定义事件
-````  
+````jsx harmony  
 import React from 'react'
 import VueComponent from '../views/test2' // vue组件
 import { useVueInReact } from 'vuereact-combined'
@@ -80,7 +80,7 @@ class demo1 extends React.Component{
 export default demo1
 ````  
 ####test2.vue
-````  
+````html  
 <template>
   <div>
     <h2>我是Vue组件</h2>
@@ -111,7 +111,7 @@ export default {
 
 ## VueContainer  
 在react组件动态引用vue组件，类似vue的<component \/>  
-````  
+````jsx harmony  
 import React from 'react'
 import VueComponent from '../views/test2' // vue组件
 import { VueContainer } from 'vuereact-combined'
@@ -146,7 +146,7 @@ export default demo1
 
 ## useReactInVue  
 在Vue的组件中使用React组件
-````  
+````html  
 <template>
   <ReactCom :prop1="prop1Value" prop2="222">我是普通插槽</ReactCom>
 </template>
@@ -170,7 +170,7 @@ export default {
 在Vue组件中，向React组件传递具名插槽和作用域插槽，以及绑定自定义事件  
 由于React没有插槽的概念，所有都是以属性存在，Vue的具名插槽和作用域插槽会被转化为React的属性，其中作用域插槽会转换成render props的方式
 并且Vue组件的事件也会被转化成React的属性
-````  
+````html  
 <template>
   <ReactCom :prop1="prop1Value" prop2="222" @event1="callEvent1">
     我是普通插槽
@@ -209,7 +209,7 @@ export default {
 
 ````  
 #### cc.jsx
-````
+````jsx harmony
 import React from 'react'
 class cc extends React.Component {
   constructor (props) {
@@ -243,7 +243,7 @@ export default cc
 ## useRedux  
 作用：使得所有的Vue组件可以使用redux的状态管理
 对工具包开启redux状态管理，这个场景一般存在于以React为主的项目中，为了使Vue组件也可以共享到redux，需要在项目的入口文件引入useRedux方法（整个项目应该只引一次），将redux的store以及redux的context作为参数传入（或者至少在redux的Provider高阶组件引入的地方使用useRedux方法）  
-````  
+````js  
 // 第二个参数是redux的context，之所以需要传第二个参数，是因为有如下场景
 // Provider -> ReactCom1 -> VueCom1 -> ReactCom2
 // Provider无法直接透过Vue组件传递给之后的React组件，所以useRedux提供了第二个参数，作用就是可以使通过Vue组件之后的React组件继续可以获取到redux的context
@@ -252,7 +252,7 @@ import store from '../reactComponents/reduxStore'
 useRedux({ store, ReactReduxContext })
 ````  
 #### store.js  
-````  
+````js  
 // 原生的redux store的创建方式
 import { createStore } from 'redux'
 import someCombineReducer from './reducer' // 建议通过react-redux的combineReducer输出
@@ -261,7 +261,7 @@ export default store
 ````  
 React组件连接redux的方式这里就不再做介绍了，应该使用react-redux的connect方法  
 这里介绍Vue组件如何使用redux，工具包尽可能的实现了vue组件使用vuex的方式去使用redux，通过vm.$redux可以在组件实例里获取到redux状态管理
-````  
+````html  
 <template>
   <div>
     redux状态testState1: {{$redux.state.testState1}}
@@ -291,14 +291,14 @@ export default {
 ## useVuex  
 作用：使得所有的Redux组件可以使用Vuex的状态管理  
 对工具包开启vuex状态管理，这个场景一般存在于以Vue为主的项目中，为了使React组件也可以共享到vuex，需要在项目的入口文件引入useVuex方法（整个项目应该只引一次），将vuex的store作为参数传入  
-````  
+````js  
 import store from '../store' // vuex的store文件
 useVuex(store)
 ````  
 
 ## connectVuex
 类似react-redux的connect方法，在React组件中使用，由于vuex的关键字比redux多，所以将参数改成了对象，包含了mapStateToProps、mapCommitToProps、mapGettersToProps、mapDispatchToProps，每个都是一个纯函数，返回一个对象（和redux的connect使用方式完全一致）  
-````  
+````js  
 export default connectVuex({
   mapStateToProps (state) {
     return {
@@ -319,7 +319,7 @@ export default connectVuex({
 
 ## lazyVueInReact  
 在React的router里懒加载Vue组件  
-````  
+````jsx harmony  
 import React, { lazy, Suspense } from "react"
 import { lazyVueInReact } from 'vuereact-combined'
 const Hello = lazy(() => import("./react_app/hello"));
@@ -356,7 +356,7 @@ export default [
 
 ## lazyReactInVue  
 在Vue的router里懒加载React组件  
-````
+````js
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import lazyReactInVue from 'vuereact-combined'
