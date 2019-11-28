@@ -24,16 +24,16 @@
         <counts>
           <entry key="babelrc" value="1" />
           <entry key="gitignore" value="1" />
-          <entry key="js" value="15" />
+          <entry key="js" value="18" />
           <entry key="json" value="1" />
-          <entry key="md" value="1" />
+          <entry key="md" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JSON" value="2" />
-          <entry key="JavaScript" value="15" />
-          <entry key="Markdown" value="1" />
+          <entry key="JavaScript" value="18" />
+          <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -41,15 +41,15 @@
         <counts>
           <entry key="babelrc" value="48" />
           <entry key="js" value="205" />
-          <entry key="json" value="102" />
-          <entry key="md" value="506" />
+          <entry key="json" value="111" />
+          <entry key="md" value="3929" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JSON" value="150" />
+          <entry key="JSON" value="159" />
           <entry key="JavaScript" value="205" />
-          <entry key="Markdown" value="506" />
+          <entry key="Markdown" value="3929" />
         </counts>
       </usages-collector>
     </session>
@@ -59,8 +59,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-531">
-              <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+            <state relative-caret-position="69">
+              <caret line="3" column="17" lean-forward="true" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
@@ -75,24 +84,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/useVueInReact.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2739">
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="424">
+                <caret line="420" column="2" lean-forward="true" selection-start-line="420" selection-start-column="2" selection-end-line="420" selection-end-column="2" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -100,14 +98,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/useVuex.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-236" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/useRedux.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-393" />
+            <state relative-caret-position="46">
+              <caret line="2" column="27" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="27" />
+            </state>
           </provider>
         </entry>
       </file>
@@ -149,6 +142,7 @@
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/.babelrc" />
         <option value="$PROJECT_DIR$/rollup.config.js" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
@@ -211,7 +205,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editorconfig.notification" value="{&#10;}&#10;" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../vue_react_project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../salescloud-cms-h5" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -246,12 +240,12 @@
       <option name="presentableId" value="Default" />
       <updated>1574831750202</updated>
       <workItem from="1574831752063" duration="4864000" />
-      <workItem from="1574844815342" duration="11192000" />
+      <workItem from="1574844815342" duration="28876000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16056000" />
+    <option name="totallyTimeSpent" value="33740000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1381" height="895" extended-state="6" />
@@ -288,16 +282,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="299">
-            <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -340,21 +324,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/useVuex.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-236" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/vuereact.es.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-15117">
@@ -381,13 +350,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/vuereact.umd.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret column="7835" selection-start-column="7835" selection-end-column="7835" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rollup.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="470">
@@ -399,10 +361,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/vuereact.umd.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret column="1439" selection-start-column="1439" selection-end-column="1439" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/useVuex.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="27" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="424">
+            <caret line="420" column="2" lean-forward="true" selection-start-line="420" selection-start-column="2" selection-end-line="420" selection-end-column="2" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-531">
-          <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+        <state relative-caret-position="69">
+          <caret line="3" column="17" lean-forward="true" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
         </state>
       </provider>
     </entry>
