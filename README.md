@@ -79,7 +79,7 @@ class demo1 extends React.Component{
 }
 export default demo1
 ````  
-####test2.vue
+#### test2.vue
 ````html  
 <template>
   <div>
