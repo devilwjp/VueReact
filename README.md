@@ -16,53 +16,11 @@ PS：这个工具包也是作为参加集团编程大赛的一个作品
 
 ## 使用前提  
 项目中要同时安装react和vue的相关环境
-#### 如果是通过vue-cli创建的项目（推荐vue-cli3）
-+ 需要安装react、react-dom、babel-plugin-transform-react-jsx  
-+ 在项目的src中创建一个react_app的目录,用来存放相关react的jsx文件
-+ 在babelrc或者babel.config.js中通过overrides添加规则，因为vue也支持jsx，但是与react编译jsx的babel插件不同，所以要区别配置，例如
-````
-overrides: [
-    {
-      test: ['./src'],
-      exclude: [/react_app[\/\\]+/],
-      presets: [
-        ['@vue/cli-plugin-babel/preset', {
-          jsx: true
-        }]
-      ]
-    },
-    {
-      test: ['./src/react_app'],
-      plugins: [
-        'transform-react-jsx'
-      ],
-      presets: [
-        ['@vue/cli-plugin-babel/preset', {
-          jsx: false
-        }]
-      ]
-    }
-  ]
-````  
+#### 如果是通过vue-cli3创建的项目
+请参考 https://github.com/devilwjp/vuereact-for-vuecli3-demo  
+ 
 #### 如果通过react-create-app创建的项目（react版本需要>=16.3）  
-+ 需要安装vue、vue-loader、vue-template-compiler  
-+ 如果使用eject，则进入config目录修改webpack.config.js  
-+ 如果使用react-app-rewired（推荐），则进入config-overrides.js中对webpack的config进行修改，例如  
-````
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
-module.exports = function override(config, env) {
-    config.module.rules[2].oneOf[1].options.babelrc = true;
-    // oneOf的下标可能不同，可以先打印出config观察
-    // 从file-loader的规则中过滤掉vue文件
-    config.module.rules[2].oneOf[7].exclude.push(/\.vue$/)
-    config.module.rules.unshift({ // add vue-loader
-        test: /\.vue$/,
-        loader: 'vue-loader',
-    })
-    config.plugins.unshift(new VueLoaderPlugin())
-    return config;
-};
-````
+请参考 https://github.com/devilwjp/vuereact-for-cra-demo
   
 ## useVueInReact  
 在react组件中使用vue的组件
