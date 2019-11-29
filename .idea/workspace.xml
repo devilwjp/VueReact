@@ -25,7 +25,7 @@
         <counts>
           <entry key="babelrc" value="1" />
           <entry key="gitignore" value="2" />
-          <entry key="js" value="18" />
+          <entry key="js" value="19" />
           <entry key="json" value="1" />
           <entry key="md" value="2" />
         </counts>
@@ -33,7 +33,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JSON" value="2" />
-          <entry key="JavaScript" value="18" />
+          <entry key="JavaScript" value="19" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="2" />
         </counts>
@@ -42,13 +42,13 @@
         <counts>
           <entry key="babelrc" value="48" />
           <entry key="js" value="205" />
-          <entry key="json" value="115" />
+          <entry key="json" value="117" />
           <entry key="md" value="4042" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JSON" value="163" />
+          <entry key="JSON" value="165" />
           <entry key="JavaScript" value="205" />
           <entry key="Markdown" value="4042" />
         </counts>
@@ -60,8 +60,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" column="57" lean-forward="true" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
+            <state relative-caret-position="69">
+              <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -88,8 +88,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="195">
-                <caret line="80" column="6" lean-forward="true" selection-start-line="80" selection-start-column="6" selection-end-line="80" selection-end-column="6" />
+              <first_editor relative-caret-position="228">
+                <caret line="344" column="55" selection-start-line="344" selection-start-column="55" selection-end-line="344" selection-end-column="55" />
                 <folding>
                   <element signature="e#0#21#0" expanded="true" />
                 </folding>
@@ -125,6 +125,7 @@
     <findStrings>
       <find>last</find>
       <find>`vue</find>
+      <find>###test2.vue</find>
     </findStrings>
     <dirStrings>
       <dir>E:\git\VueReact</dir>
@@ -204,6 +205,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\git\VueReact\dist" />
       <recent name="E:\git\VueReact\src" />
       <recent name="E:\git\VueReact" />
     </key>
@@ -232,18 +234,18 @@
       <updated>1574831750202</updated>
       <workItem from="1574831752063" duration="4864000" />
       <workItem from="1574844815342" duration="30482000" />
-      <workItem from="1574953138180" duration="3651000" />
+      <workItem from="1574953138180" duration="5499000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38997000" />
+    <option name="totallyTimeSpent" value="40845000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1381" height="895" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19687964" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15750371" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -279,13 +281,6 @@
     <entry file="file://$PROJECT_DIR$/dist/vuereact.iife.js" />
     <entry file="file://$PROJECT_DIR$/dist/vuereact.cjs.js" />
     <entry file="file://$PROJECT_DIR$/src/index.js" />
-    <entry file="file://$PROJECT_DIR$/dist/vuereact.umd.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret column="1439" selection-start-column="1439" selection-end-column="1439" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/useVuex.js" />
     <entry file="file://$PROJECT_DIR$/.babelrc">
       <provider selected="true" editor-type-id="text-editor">
@@ -312,18 +307,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dist/vuereact.umd.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret column="1439" selection-start-column="1439" selection-end-column="1439" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="57" lean-forward="true" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
+        <state relative-caret-position="69">
+          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="195">
-            <caret line="80" column="6" lean-forward="true" selection-start-line="80" selection-start-column="6" selection-end-line="80" selection-end-column="6" />
+          <first_editor relative-caret-position="228">
+            <caret line="344" column="55" selection-start-line="344" selection-start-column="55" selection-end-line="344" selection-end-column="55" />
             <folding>
               <element signature="e#0#21#0" expanded="true" />
             </folding>

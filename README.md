@@ -343,7 +343,6 @@ export default [
     component: () => {
         return (
             <Suspense fallback={<div>Loading...</div>}>
-                {/*在react的jsx中加载vue组件，必须有一个非组件的dom元素包囊，比如div等*/}
                 <div>
                     <h1>我是一个vue组件</h1>
                     <TestVue />
