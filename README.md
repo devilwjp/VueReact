@@ -2,7 +2,8 @@
 #### 【暂不开源】 
 可以在任何的Vue和React项目中使用另一个类型框架的组件，并且解决了复杂的集成问题
 + 在React组件中使用Vue组件
-    + 并解决传入的属性在Vue组件中$props与$attrs的处理关系
+    + 并解决传入的属性在Vue组件中$props与$attrs的处理关系  
+    + 支持v-model和自定义v-model（使用$model，详见useVueInReact说明）
 + 在Vue组件中使用React组件
 + Vue和React的具名插槽转换  
 + Vue和React的作用域插槽转化  
@@ -45,7 +46,8 @@ export default demo1
 
 ````  
 
-在react组件中，向vue组件传递具名插槽和作用域插槽，以及绑定自定义事件
+在react组件中，向vue组件传递具名插槽和作用域插槽，以及绑定自定义事件，以及v-model应用  
+react本身并不支持v-model，所以需要通过$model的方式转换成vue组件能接收的v-model
 ````jsx harmony  
 import React from 'react'
 import VueComponent from '../views/test2' // vue组件
@@ -55,6 +57,9 @@ class demo1 extends React.Component{
   constructor (props) {
     super(props)
     this.event1 = this.event1.bind(this)
+    this.state = {
+      aaa: 1111
+    }
   }
   event1 (...args) {
     console.log(args)
@@ -69,7 +74,10 @@ class demo1 extends React.Component{
           slotB: <div>插槽B</div>
         }} $scopedSlots={{
           slotC: (context) => <div>我是作用域插槽：{context.value}</div>
-        }}>
+        }} $model={{
+           value: this.state.aaa, // value必须是一个state
+           setter: (value) => { this.setState({ aaa: value }) } // setter必须是直接修改state
+         }}/>
           <hr/>
           <h1>我是普通的插槽</h1>
         </VueComponentInReact>
