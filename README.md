@@ -380,3 +380,9 @@ const router = new VueRouter({
 
 export default router
 ````  
+
+## 需要注意的包囊性问题  
+由于在每一次跨越一个框架进行组件引用时，都会出现一层包囊，这个包囊是以div呈现，并且会被特殊属性标注  
+React->Vue，会在vue组件的dom元素外包囊一层标识data-use-vue-component-wrap的div  
+Vue->React，会在react组件的dom元素外包囊一层标识__use_react_component_wrap的div  
+如果引发样式问题，可以全局对这些标识进行样式修正  
