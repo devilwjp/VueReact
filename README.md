@@ -47,7 +47,7 @@ export default demo1
 ````  
 
 在react组件中，向vue组件传递具名插槽和作用域插槽，以及绑定自定义事件，以及v-model应用  
-react本身并不支持v-model，所以需要通过$model的方式转换成vue组件能接收的v-model
+react本身并不支持v-model，所以需要通过$model的方式转换成vue组件能接收的v-model，即便vue组件自定义了model属性和事件，$model的value和setter也不需要变化  
 ````jsx harmony  
 import React from 'react'
 import VueComponent from '../views/test2' // vue组件
