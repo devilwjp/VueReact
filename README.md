@@ -1,5 +1,6 @@
 # Vue和React快捷集成的工具包，并且适合复杂的集成场景 
 #### 【暂不开源】 
+可以通过QQ联系我 QQ：9700616  
 可以在任何的Vue和React项目中使用另一个类型框架的组件，并且解决了复杂的集成问题
 + 在React组件中使用Vue组件
     + 并解决传入的属性在Vue组件中$props与$attrs的处理关系  
@@ -367,7 +368,7 @@ export default [
 ````js
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import lazyReactInVue from 'vuereact-combined'
+import { lazyReactInVue } from 'vuereact-combined'
 Vue.use(VueRouter)
 
 const routes = [
