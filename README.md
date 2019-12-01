@@ -6,17 +6,9 @@
   <img src="https://raw.githubusercontent.com/devilwjp/VueReact/master/vuereact-combined.png"/>
 </div>  
 
-可以在任何的Vue和React项目中使用另一个类型框架的组件，并且解决了复杂的集成问题
-+ 在React组件中使用Vue组件
-    + 并解决传入的属性在Vue组件中$props与$attrs的处理关系  
-    + 支持v-model和自定义v-model（使用$model，详见useVueInReact说明）
-+ 在Vue组件中使用React组件
-+ Vue和React的具名插槽转换  
-+ Vue和React的作用域插槽转化  
-+ 共享Vuex  
-+ 共享Redux  
-+ 在React路由中懒加载Vue组件  
-+ 在Vue路由中懒加载React组件  
+<div align=center>
+  ####可以在任何的Vue和React项目中使用另一个类型框架的组件，并且解决了复杂的集成问题 
+</div>  
 
 ## Why?  
 #### 大一统，前端再也不分家，让vue和react的同学们一起来完成同一个项目同一个页面甚至同一个组件
