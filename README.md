@@ -29,8 +29,8 @@ PS：这个工具包也是作为参加集团编程大赛的一个作品
 html片段属性 | 变向支持 | 通过$slots，在vue中使用具名插槽获取 | 
 render props | 变向支持 | 通过$scopedSlots，在vue中使用作用域插槽获取 |  
 children(普通插槽) | 完全支持 |  |  
-合成事件 | 完全支持 | 通过on属性 |  
-原生事件 | 不支持 | react没有这种感念，可以自己包囊div |  
+组件合成事件 | 完全支持 | 通过on属性 |  
+组件原生事件(.native) | 不支持 | react没有这种感念，可以自己包囊div |  
 v-model | 变向支持 | 通过$model，并且支持vue组件中随意自定义model属性 |  
 context传入vue | 暂不支持 | 未来会支持，当前只有在vue中使用redux做了polyfill |  
 html片段中使用react或者vue组件 | 完全支持 | react组件直接传入，vue组件继续通过useVueInReact转换 |  
@@ -48,8 +48,8 @@ sync装饰 | 暂不支持 | |
 具名插槽 | 完全支持 | 在react中使用属性获取 | 
 作用域插槽 | 完全支持 | 在react中使用属性获取，类型是个函数 |  
 普通插槽 | 完全支持 |  |  
-合成事件 | 完全支持 | 在react中使用属性获取 |  
-原生事件 | 暂不支持 |  |  
+组件合成事件 | 完全支持 | 在react中使用属性获取 |  
+组件原生事件(.native) | 暂不支持 |  |  
 v-model | 不支持 | react组件没有这个概念 |  
 provider/inject传入react | 暂不支持 | 未来会支持 |  
 sync装饰 | 不支持 | react组件没有这个概念 |  
