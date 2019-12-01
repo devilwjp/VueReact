@@ -1,7 +1,7 @@
 # Vue和React快捷集成的工具包，并且适合复杂的集成场景 
 #### 【暂不开源】 。。。等公司同意吧 
 可以通过QQ联系我 QQ：9700616  
-<img src="https://raw.githubusercontent.com/devilwjp/VueReact/master/vuereact-combined.png" width = "300" height = "300" div align=center />  
+<div align=center>![avatar](https://raw.githubusercontent.com/devilwjp/VueReact/master/vuereact-combined.png)  
 可以在任何的Vue和React项目中使用另一个类型框架的组件，并且解决了复杂的集成问题
 + 在React组件中使用Vue组件
     + 并解决传入的属性在Vue组件中$props与$attrs的处理关系  
