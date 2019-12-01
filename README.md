@@ -57,6 +57,7 @@ redux共享 | 完全支持 | 使用useRedux |
 mobx共享 | 变向支持 | mobx本身就有react和vue的连接方式 |  
 vuex共享 | 完全支持 | 使用useVuex |  
 事件修饰(key.enter、click.once) | 不支持 | react组件没有这个概念 |  
+懒加载react组件 | 完全支持 | 通过lazyReactInVue |  
 
 ## 使用前提  
 项目中要同时安装react和vue的相关环境
