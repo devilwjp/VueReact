@@ -65,6 +65,11 @@ vuex共享 | 完全支持 | 使用useVuex |
  
 #### 如果通过react-create-app创建的项目（react版本需要>=16.3）  
 请参考 https://github.com/devilwjp/vuereact-for-cra-demo
+
+#### 安装
+````  
+npm i vuereact-combined
+````   
   
 ## useVueInReact  
 在react组件中使用vue的组件
