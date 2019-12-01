@@ -31,7 +31,7 @@ render props | 变向支持 | 通过$scopedSlots，在vue中使用作用域插�
 children(普通插槽) | 完全支持 |  |  
 合成事件 | 完全支持 | 通过on属性 |  
 原生事件 | 不支持 | react没有这种感念，可以自己包囊div |  
-v-model | 变向支持 | 通过$model |  
+v-model | 变向支持 | 通过$model，并且支持vue组件中随意自定义model属性 |  
 context传入vue | 暂不支持 | 未来会支持，当前只有在vue中使用redux做了polyfill |  
 html片段中使用react或者vue组件 | 完全支持 | react组件直接传入，vue组件继续通过useVueInReact转换 |  
 懒加载vue组件 | 完全支持 | 通过lazyVueInReact |  
