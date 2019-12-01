@@ -153,6 +153,15 @@ class demo1 extends React.Component{
 }
 export default demo1
 ````  
+#### 在react中使用vue的全局注册组件  
+与react不同，vue有全局注册组件的功能，使每个组件不需要再单独引入  
+将vue全局组件的id作为参数传入useVueInReact中，或者将id作为component属性的值传入VueContainer中  
+示例：在react中使用全局的vue版本element-ui的DatePicker
+```jsx harmony  
+const ElDatePickerInReact = useVueInReact('ElDatePicker') // 将el-date-picker转换成ElDatePicker就是id
+// 或者
+<VueContainer component={'ElDatePicker'}/>
+```  
 
 ## useReactInVue  
 在Vue的组件中使用React组件
@@ -248,6 +257,27 @@ class cc extends React.Component {
   }
 }
 export default cc  
+````  
+#### useReactInVue的复杂案例
+比如react版本的antd的Card组件，在react中的使用示例如下  
+```jsx harmony  
+<Card title="Default size card" extra={<a href="#">More</a>}>
+  <p>Card content</p>
+  <p>Card content</p>
+  <p>Card content</p>
+</Card>
+```  
+react版本的antd，在vue组件中使用的示例如下
+````html
+<CardInVue class="react-com" title="Default size card">
+    <!--react antd的extra属性是传递html片段的，在vue中就使用具名插槽-->
+    <template v-slot:extra>
+        <a href="#">More</a>
+    </template>
+    <p>Card content</p>
+    <p>Card content</p>
+    <p>Card content</p>
+</CardInVue>
 ````  
 
 ## useRedux  
