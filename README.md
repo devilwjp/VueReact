@@ -25,11 +25,13 @@ PS：这个工具包也是作为参加集团编程大赛的一个作品
 #### 在react组件中引入vue组件  
 功能 | 支持程度 |  说明  
 -|-|-  
-属性 | 完全支持 | html片段属性的值在vue中使用具名插槽获取 |  
+普通属性 | 完全支持 |  |  
+html片段属性 | 变向支持 | 通过$slots，在vue中使用具名插槽获取 | 
+render props | 变向支持 | 通过$scopedSlots，在vue中使用作用域插槽获取 |  
+children(插槽) | 完全支持 |  |  
 合成事件 | 完全支持 | 通过on属性 |  
 原生事件 | 不支持 | react没有这种感念，可以自己包囊div |  
 v-model | 变向支持 | 通过$model |  
-render props | 完全支持 | 在vue中使用作用域插槽获取 |  
 context传入vue | 暂不支持 | 未来会支持，当前只有在vue中使用redux做了polyfill |  
 
 ## 使用前提  
