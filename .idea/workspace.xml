@@ -43,14 +43,14 @@
           <entry key="babelrc" value="48" />
           <entry key="js" value="205" />
           <entry key="json" value="236" />
-          <entry key="md" value="5400" />
+          <entry key="md" value="5434" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="284" />
           <entry key="JavaScript" value="205" />
-          <entry key="Markdown" value="5400" />
+          <entry key="Markdown" value="5434" />
         </counts>
       </usages-collector>
     </session>
@@ -88,8 +88,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="460">
-                <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+              <first_editor relative-caret-position="506">
+                <caret line="21" column="112" selection-start-line="21" selection-start-column="112" selection-end-line="21" selection-end-column="112" />
                 <folding>
                   <element signature="e#0#21#0" expanded="true" />
                 </folding>
@@ -222,12 +222,12 @@
       <updated>1574831750202</updated>
       <workItem from="1574831752063" duration="4864000" />
       <workItem from="1574844815342" duration="30482000" />
-      <workItem from="1574953138180" duration="16761000" />
+      <workItem from="1574953138180" duration="16822000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52107000" />
+    <option name="totallyTimeSpent" value="52168000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1381" height="895" extended-state="6" />
@@ -312,8 +312,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="460">
-            <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+          <first_editor relative-caret-position="506">
+            <caret line="21" column="112" selection-start-line="21" selection-start-column="112" selection-end-line="21" selection-end-column="112" />
             <folding>
               <element signature="e#0#21#0" expanded="true" />
             </folding>
