@@ -2,9 +2,9 @@
 #### 【暂不开源】 。。。等公司同意吧 
 可以通过QQ联系我 QQ：9700616  
 
-<center>
-<img src="https://raw.githubusercontent.com/devilwjp/VueReact/master/vuereact-combined.png"/>
-</center>  
+<div align=center>
+  <img src="https://raw.githubusercontent.com/devilwjp/VueReact/master/vuereact-combined.png"/>
+</div>  
 
 可以在任何的Vue和React项目中使用另一个类型框架的组件，并且解决了复杂的集成问题
 + 在React组件中使用Vue组件
