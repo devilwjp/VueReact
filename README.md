@@ -12,13 +12,22 @@
   <p>
 </div>  
 
+## 安装  
+````  
+npm i vuereact-combined -S
+````  
+
 ## Why?  
-#### 大一统，前端再也不分家，让vue和react的同学们一起来完成同一个项目同一个页面甚至同一个组件
-很幸运，集团公司在前端是不定死技术栈的，所以就造成了vue与react共存的情况，我的团队主要擅长vue技术栈，曾经被挑战的问道如何才能和其他react技术栈的开发人员沟通交流，关于这个问题我觉得研发人员从来就不会被技术栈所限制住，所以为了促进我们团队对react的熟悉以及可以直接在现有的vue项目中自由的使用第三方的react组件或者自定义组件，我调研了国外的一些方案，取长补短做到了以最细粒度的将两者集成在一起。并且实现了一些比较复杂的场景的集成。  
-PS：这个工具包也是作为参加集团编程大赛的一个作品
+#### 让vue和react的同学们一起来完成同一个项目同一个页面甚至同一个组件  
++ 使项目的人员选择性和机动性变得更强，vue和react的技术栈都可以加入项目  
++ 使项目的第三方插件选择性更强，vue和react的插件都可以通用  
++ 使研发人员的技术交流性更强，研发人员不应该被技术栈所限制  
++ 使项目可以集成更多的业务代码，其他vue和react项目的优秀代码可以快速引入  
++ 使前端研发人员可以更好的学习vue和react，了解两者的精华，促进团队在前端技术栈的广度  
++ 使用方式极其简便
 
 #### 遇到的困难  
-众所周知，React更纯粹，Vue做的封装更多，所以大多数的难度都是集中在react的组件引用vue组件的过程中（useVueInReact），比如具名插槽、作用域插槽、v-model、#attrs与$props的关系等，当然还有无数的功能需要完善，所以我只要还活着就会一直更新下去💪  
+众所周知，React更纯粹，Vue做的封装更多，所以大多数的难度都是集中在react的组件引用vue组件的过程中
 
 ## 支持程度  
 #### 在react组件中引入vue组件  
@@ -32,13 +41,14 @@ children(普通插槽) | 完全支持 |  |
 组件原生事件(.native) | 不支持 | react没有这种感念，可以自己包囊div |  
 v-model | 变向支持 | 通过$model，并且支持vue组件中随意自定义model属性 |  
 context传入vue | 暂不支持 | 未来会支持，当前只有在vue中使用redux做了polyfill |  
-html片段中使用react或者vue组件 | 完全支持 | react组件直接传入，vue组件继续通过useVueInReact转换 |  
+html片段中使用react或者vue组件 | 完全支持 | react组件直接传入，vue组件继续通过applyVueInReact转换 |  
 懒加载vue组件 | 完全支持 | 通过lazyVueInReact |  
-redux共享 | 完全支持 | 使用useRedux |  
+redux共享 | 完全支持 | 使用applyRedux |  
 mobx共享 | 变向支持 | mobx本身就有react和vue的连接方式 |  
-vuex共享 | 完全支持 | 使用useVuex |  
+vuex共享 | 完全支持 | 使用applyVuex |  
 sync装饰 | 暂不支持 | |  
-事件修饰(key.enter、click.once) | 不支持 | 自行处理 |
+事件修饰(key.enter、click.once) | 不支持 | 自行处理 |  
+透传 | 变向支持 | 使用data-passed-props |  
 
 #### 在vue组件中引入react组件  
 功能 | 支持程度 |  说明  
@@ -52,11 +62,12 @@ sync装饰 | 暂不支持 | |
 v-model | 不支持 | react组件没有这个概念 |  
 provider/inject传入react | 暂不支持 | 未来会支持 |  
 sync装饰 | 不支持 | react组件没有这个概念 |  
-redux共享 | 完全支持 | 使用useRedux |  
+redux共享 | 完全支持 | 使用applyRedux |  
 mobx共享 | 变向支持 | mobx本身就有react和vue的连接方式 |  
-vuex共享 | 完全支持 | 使用useVuex |  
+vuex共享 | 完全支持 | 使用applyVuex |  
 事件修饰(key.enter、click.once) | 不支持 | react组件没有这个概念 |  
 懒加载react组件 | 完全支持 | 通过lazyReactInVue |  
+透传 | 变向支持 | 使用data-passed-props |  
 
 ## 使用前提  
 项目中要同时安装react和vue的相关环境
@@ -71,13 +82,13 @@ vuex共享 | 完全支持 | 使用useVuex |
 npm i vuereact-combined
 ````   
   
-## useVueInReact  
+## applyVueInReact  
 在react组件中使用vue的组件
 ````jsx harmony   
 import React from 'react'
 import VueComponent from '../views/test2.vue' // vue组件
-import { useVueInReact } from 'vuereact-combined'
-let VueComponentInReact = useVueInReact(VueComponent)
+import { applyVueInReact } from 'vuereact-combined'
+let VueComponentInReact = applyVueInReact(VueComponent)
 class demo1 extends React.Component{
   render(){
     return (
@@ -99,8 +110,8 @@ react本身并不支持v-model，所以需要通过$model的方式转换成vue�
 ````jsx harmony  
 import React from 'react'
 import VueComponent from '../views/test2' // vue组件
-import { useVueInReact } from 'vuereact-combined'
-let VueComponentInReact = useVueInReact(VueComponent)
+import { applyVueInReact } from 'vuereact-combined'
+let VueComponentInReact = applyVueInReact(VueComponent)
 class demo1 extends React.Component{
   constructor (props) {
     super(props)
@@ -125,7 +136,7 @@ class demo1 extends React.Component{
         }} $model={{
            value: this.state.aaa, // value必须是一个state
            setter: (value) => { this.setState({ aaa: value }) } // setter必须是直接修改state
-         }}/>
+         }}>
           <hr/>
           <h1>我是普通的插槽</h1>
         </VueComponentInReact>
@@ -201,15 +212,15 @@ export default demo1
 ````  
 #### 在react中使用vue的全局注册组件  
 与react不同，vue有全局注册组件的功能，使每个组件不需要再单独引入  
-将vue全局组件的id作为参数传入useVueInReact中，或者将id作为component属性的值传入VueContainer中  
+将vue全局组件的id作为参数传入applyVueInReact中，或者将id作为component属性的值传入VueContainer中  
 示例：在react中使用全局的vue版本element-ui的DatePicker
 ```jsx harmony  
-const ElDatePickerInReact = useVueInReact('ElDatePicker') // 将el-date-picker转换成ElDatePicker就是id
+const ElDatePickerInReact = appluVueInReact('ElDatePicker') // 将el-date-picker转换成ElDatePicker就是id
 // 或者
 <VueContainer component={'ElDatePicker'}/>
 ```  
 
-## useReactInVue  
+## applyReactInVue  
 在Vue的组件中使用React组件
 ````html  
 <template>
@@ -217,7 +228,7 @@ const ElDatePickerInReact = useVueInReact('ElDatePicker') // 将el-date-picker�
 </template>
 
 <script>
-import { useReactInVue } from 'vuereact-combined'
+import { applyReactInVue } from 'vuereact-combined'
 import ReactComponents1 from '../reactComponents/cc.jsx' // React组件
 export default {
   name: 'demo2',
@@ -227,7 +238,7 @@ export default {
     }
   },
   components: {
-    ReactCom: useReactInVue(ReactComponents1)
+    ReactCom: applyReactInVue(ReactComponents1)
   }
 }
 </script>
@@ -252,7 +263,7 @@ export default {
 </template>
 
 <script>
-import { useReactInVue } from 'vuereact-combined'
+import { applyReactInVue } from 'vuereact-combined'
 import ReactComponents1 from '../reactComponents/cc.jsx' // React组件
 export default {
   name: 'demo2',
@@ -267,7 +278,7 @@ export default {
     }
   },
   components: {
-    ReactCom: useReactInVue(ReactComponents1)
+    ReactCom: applyReactInVue(ReactComponents1)
   }
 }
 </script>
@@ -304,7 +315,7 @@ class cc extends React.Component {
 }
 export default cc  
 ````  
-#### useReactInVue的复杂案例
+#### applyReactInVue的复杂案例
 比如react版本的antd的Card组件，在react中的使用示例如下  
 ```jsx harmony  
 <Card title="Default size card" extra={<a href="#">More</a>}>
@@ -326,16 +337,16 @@ react版本的antd，在vue组件中使用的示例如下
 </CardInVue>
 ````  
 
-## useRedux  
+## applyRedux  
 作用：使得所有的Vue组件可以使用redux的状态管理
-对工具包开启redux状态管理，这个场景一般存在于以React为主的项目中，为了使Vue组件也可以共享到redux，需要在项目的入口文件引入useRedux方法（整个项目应该只引一次），将redux的store以及redux的context作为参数传入（或者至少在redux的Provider高阶组件引入的地方使用useRedux方法）  
+对工具包开启redux状态管理，这个场景一般存在于以React为主的项目中，为了使Vue组件也可以共享到redux，需要在项目的入口文件引入applyRedux方法（整个项目应该只引一次），将redux的store以及redux的context作为参数传入（或者至少在redux的Provider高阶组件引入的地方使用applyRedux方法）  
 ````js  
 // 第二个参数是redux的context，之所以需要传第二个参数，是因为有如下场景
 // Provider -> ReactCom1 -> VueCom1 -> ReactCom2
-// Provider无法直接透过Vue组件传递给之后的React组件，所以useRedux提供了第二个参数，作用就是可以使通过Vue组件之后的React组件继续可以获取到redux的context
+// Provider无法直接透过Vue组件传递给之后的React组件，所以applyRedux提供了第二个参数，作用就是可以使通过Vue组件之后的React组件继续可以获取到redux的context
 import { ReactReduxContext } from 'react-redux'
 import store from '../reactComponents/reduxStore'
-useRedux({ store, ReactReduxContext })
+applyRedux({ store, ReactReduxContext })
 ````  
 #### store.js  
 ````js  
@@ -374,12 +385,12 @@ export default {
 </script>
 ````  
 
-## useVuex  
+## applyVuex  
 作用：使得所有的Redux组件可以使用Vuex的状态管理  
-对工具包开启vuex状态管理，这个场景一般存在于以Vue为主的项目中，为了使React组件也可以共享到vuex，需要在项目的入口文件引入useVuex方法（整个项目应该只引一次），将vuex的store作为参数传入  
+对工具包开启vuex状态管理，这个场景一般存在于以Vue为主的项目中，为了使React组件也可以共享到vuex，需要在项目的入口文件引入applyVuex方法（整个项目应该只引一次），将vuex的store作为参数传入  
 ````js  
 import store from '../store' // vuex的store文件
-useVuex(store)
+applyVuex(store)
 ````  
 
 ## connectVuex
