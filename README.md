@@ -81,6 +81,36 @@ vuex共享 | 完全支持 | 使用applyVuex |
 ````  
 npm i vuereact-combined
 ````   
+## 重要！  
+由于react hooks的取名规范是use开头，所以将use开头的方法全部修改成了apply开头，老的use开头方法仍然有效  
+
+## v0.3.3新增 
+### data-passed-props（透传）  
+每个通过applyVueInReact的的vue组件，以及通过applyReactInVue的react组件，都可以收到一个data-passed-props的属性，这个属性可以帮助你不做任何包装的，被之后再次使用applyVueInReact或applyReactInVue的组件收到全部的属性（由于是跨框架透传，原生的透传方式并不会自动做相应的封装和转换）  
+```jsx harmony
+// react组件透传给vue组件
+const VueComponent = applyVueInReact(require('./anyVueComponent'))
+class theReactComponentFromVue extends React.Component{
+    render () {
+        return <VueComponent data-passed-props={this.props['data-passed-props']}/>
+    }
+}
+```  
+```html
+<template>
+    <!--vue组件透传给react组件-->
+    <!--通过$attrs['data-passed-props']或者$props.dataPassedProps-->
+    <ReactComponent :data-passed-props="$attrs['data-passed-props']"></ReactComponent>
+</template>
+<script>
+const ReactComponent = applyReactInVue(require('./anyReactComponent'))
+export default {
+    name: 'theVueComponentFromReact'
+    // 如果通过props获取data-passed-props，需要转成驼峰
+    // props: ['dataPassedProps']
+}
+</script>
+```
   
 ## applyVueInReact  
 在react组件中使用vue的组件
