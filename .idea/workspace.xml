@@ -27,13 +27,13 @@
           <entry key="babelrc" value="1" />
           <entry key="gitignore" value="2" />
           <entry key="js" value="23" />
-          <entry key="json" value="1" />
+          <entry key="json" value="2" />
           <entry key="md" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JSON" value="2" />
+          <entry key="JSON" value="3" />
           <entry key="JavaScript" value="23" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="2" />
@@ -43,14 +43,14 @@
         <counts>
           <entry key="babelrc" value="48" />
           <entry key="js" value="205" />
-          <entry key="json" value="243" />
+          <entry key="json" value="253" />
           <entry key="md" value="8242" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="13" />
-          <entry key="JSON" value="291" />
+          <entry key="JSON" value="301" />
           <entry key="JSX Harmony" value="7" />
           <entry key="JavaScript" value="205" />
           <entry key="Markdown" value="8222" />
@@ -87,7 +87,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -98,6 +98,15 @@
                 </folding>
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package-lock.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="274">
+              <caret line="2187" column="40" selection-start-line="2187" selection-start-column="40" selection-end-line="2187" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -118,6 +127,7 @@
       <find>###test2.vue</find>
       <find>v-mo</find>
       <find>use</find>
+      <find>serialize-javascript</find>
     </findStrings>
     <dirStrings>
       <dir>E:\git\VueReact</dir>
@@ -133,6 +143,7 @@
         <option value="$PROJECT_DIR$/rollup.config.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/package-lock.json" />
       </list>
     </option>
   </component>
@@ -223,18 +234,18 @@
       <workItem from="1574844815342" duration="30482000" />
       <workItem from="1574953138180" duration="28707000" />
       <workItem from="1575381261003" duration="10789000" />
-      <workItem from="1575702077759" duration="5707000" />
+      <workItem from="1575702077759" duration="6399000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80549000" />
+    <option name="totallyTimeSpent" value="81241000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1381" height="895" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1077266" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1077266" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -248,7 +259,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32934928" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32934928" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -316,6 +327,13 @@
             </folding>
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="2187" column="40" selection-start-line="2187" selection-start-column="40" selection-end-line="2187" selection-end-column="40" />
         </state>
       </provider>
     </entry>
