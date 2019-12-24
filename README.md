@@ -46,9 +46,12 @@ html片段中使用react或者vue组件 | 完全支持 | react组件直接传入
 redux共享 | 完全支持 | 使用applyRedux |  
 mobx共享 | 变向支持 | mobx本身就有react和vue的连接方式 |  
 vuex共享 | 完全支持 | 使用applyVuex |  
-sync装饰 | 暂不支持 | |  
+sync装饰 | 变向支持 | 使用$sync |  
 事件修饰(key.enter、click.once) | 不支持 | 自行处理 |  
 透传 | 变向支持 | 使用data-passed-props |  
+ref | 变向支持 | ref首先会返回包囊实例的，在包囊实例中的属性vueRef可以获取倒vue组件实例 |  
+react router(在vue组件中) | 完全支持 | 使用applyReactRouterInVue |  
+判断自身是否被转化 | 完全支持 | 通过props属性data-passed-props或者实例属性reactWrapperRef |  
 
 #### 在vue组件中引入react组件  
 功能 | 支持程度 |  说明  
@@ -68,6 +71,9 @@ vuex共享 | 完全支持 | 使用applyVuex |
 事件修饰(key.enter、click.once) | 不支持 | react组件没有这个概念 |  
 懒加载react组件 | 完全支持 | 通过lazyReactInVue |  
 透传 | 变向支持 | 使用data-passed-props |  
+ref | 变向支持 | ref首先会返回包囊实例的，在包囊实例中的属性reactRef可以获取倒react组件实例 |  
+vue router(在react组件中) | 完全支持 | 使用withVueRouter |  
+判断自身是否被转化 | 完全支持 | 通过props属性data-passed-props或者实例属性vueWrapperRef |  
 
 ## 使用前提  
 项目中要同时安装react和vue的相关环境
@@ -83,35 +89,11 @@ npm i vuereact-combined
 ````   
 ## 重要！  
 由于react hooks的取名规范是use开头，所以将use开头的方法全部修改成了apply开头，老的use开头方法仍然有效  
-
-## v0.3.3新增 
-### data-passed-props（透传）  
-每个通过applyVueInReact的的vue组件，以及通过applyReactInVue的react组件，都可以收到一个data-passed-props的属性，这个属性可以帮助你不做任何包装的，被之后再次使用applyVueInReact或applyReactInVue的组件收到全部的属性（由于是跨框架透传，原生的透传方式并不会自动做相应的封装和转换）  
-```jsx harmony
-// react组件透传给vue组件
-const VueComponent = applyVueInReact(require('./anyVueComponent'))
-class theReactComponentFromVue extends React.Component{
-    render () {
-        return <VueComponent data-passed-props={this.props['data-passed-props']}/>
-    }
-}
-```  
-```html
-<template>
-    <!--vue组件透传给react组件-->
-    <!--通过$attrs['data-passed-props']或者$props.dataPassedProps-->
-    <ReactComponent :data-passed-props="$attrs['data-passed-props']"></ReactComponent>
-</template>
-<script>
-const ReactComponent = applyReactInVue(require('./anyReactComponent'))
-export default {
-    name: 'theVueComponentFromReact'
-    // 如果通过props获取data-passed-props，需要转成驼峰
-    // props: ['dataPassedProps']
-}
-</script>
-```
   
+## v0.3.7新增  
+* 支持ref  
+* 支持组件获取不同框架的router对象，并在组件中使用 （applyReactRouterInVue、withVueRouter）  
+
 ## applyVueInReact  
 在react组件中使用vue的组件
 ````jsx harmony   
@@ -348,11 +330,13 @@ export default cc
 #### applyReactInVue的复杂案例
 比如react版本的antd的Card组件，在react中的使用示例如下  
 ```jsx harmony  
-<Card title="Default size card" extra={<a href="#">More</a>}>
-  <p>Card content</p>
-  <p>Card content</p>
-  <p>Card content</p>
-</Card>
+render () {
+    return (<Card title="Default size card" extra={<a href="#">More</a>}>
+             <p>Card content</p>
+             <p>Card content</p>
+             <p>Card content</p>
+           </Card>)
+}
 ```  
 react版本的antd，在vue组件中使用的示例如下
 ````html
@@ -507,6 +491,113 @@ const router = new VueRouter({
 
 export default router
 ````  
+  
+## withVueRouter  
+在react组件中获取vue router对象，可以通过props属性获取倒$vueRouter和$vueRoute  
+```jsx harmony
+import React from 'react'
+import { withVueRouter } from 'vuereact-combined'
+class Test2 extends React.Component {
+  constructor (props) {
+    super(props)
+  }
+  componentWillMount () {
+
+  }
+  componentDidMount () {
+    // 可以通过props属性获取倒$vueRouter和$vueRoute
+    console.log(this.props.$vueRouter, this.props.$vueRoute)
+  }
+
+  render () {
+    return (
+      <div>
+        test2
+        <h3>{this.props.$vueRoute.query.b}</h3>
+      </div>
+    )
+  }
+}
+export default withVueRouter(Test2)
+```  
+  
+## applyReactRouterInVue  
+建议在react项目的app或者main引入，然后再任何一个被转换的vue组件中都可以直接获取到实例属性$reactRouter,其中包含了react router的history、location、match
+#### app.jsx
+```jsx harmony
+import { applyReactRouterInVue } from 'vuereact-combined'
+import { withRouter } from 'react-router-dom'
+applyReactRouterInVue(withRouter)
+```  
+#### demo.vue
+```vue
+<template>
+    <div>
+      <h1>demo</h1>
+      <h2>{{$reactRouter.location.search}}</h2>
+    </div>
+</template>
+
+<script>
+export default {
+  mounted () {
+  }
+}
+</script>
+```  
+
+## 0.3.6新增
+### sync修饰(applyVueInReact)  
+在react组件中使用vue组件，如果要使用vue的sync修饰，使用$sync属性  
+$sync \<Object>  
++ 属性名 \<Object>  
+++ value \<React State>  
+++ setter \<Function> 纯函数，接收一个值修改state
+```jsx harmony  
+render () {
+    return (
+        <VueComInReact $sync={{
+          test1: {
+            value: this.state.test1,
+            setter: (val) => {
+              console.log(val)
+              this.setState({
+                test1: val
+              })
+            }
+          }
+        }}/>
+    )
+  }
+```  
+
+## v0.3.3新增 
+### data-passed-props（透传）  
+每个通过applyVueInReact的的vue组件，以及通过applyReactInVue的react组件，都可以收到一个data-passed-props的属性，这个属性可以帮助你不做任何包装的，被之后再次使用applyVueInReact或applyReactInVue的组件收到全部的属性（由于是跨框架透传，原生的透传方式并不会自动做相应的封装和转换）  
+```jsx harmony
+// react组件透传给vue组件
+const VueComponent = applyVueInReact(require('./anyVueComponent'))
+class theReactComponentFromVue extends React.Component{
+    render () {
+        return <VueComponent data-passed-props={this.props['data-passed-props']}/>
+    }
+}
+```  
+```html
+<template>
+    <!--vue组件透传给react组件-->
+    <!--通过$attrs['data-passed-props']或者$props.dataPassedProps-->
+    <ReactComponent :data-passed-props="$attrs['data-passed-props']"></ReactComponent>
+</template>
+<script>
+const ReactComponent = applyReactInVue(require('./anyReactComponent'))
+export default {
+    name: 'theVueComponentFromReact'
+    // 如果通过props获取data-passed-props，需要转成驼峰
+    // props: ['dataPassedProps']
+}
+</script>
+```  
 
 ## 需要注意的包囊性问题  
 由于在每一次跨越一个框架进行组件引用时，都会出现一层包囊，这个包囊是以div呈现，并且会被特殊属性标注  
