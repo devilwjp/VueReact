@@ -1,6 +1,5 @@
 # Vue和React快捷集成的工具包，并且适合复杂的集成场景 
-#### 【暂不开源】 。。。等公司同意吧 
-可以通过QQ联系我 QQ：9700616  
+## [项目源码仓库地址](https://github.com/devilwjp/vuereact-combined)
 
 <div align=center>
   <img src="https://raw.githubusercontent.com/devilwjp/VueReact/master/vuereact-combined.png"/>
